@@ -1,0 +1,43 @@
+* {
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar__container {
+  overflow: hidden;
+  background: #333333;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar__item {
+  float: left;
+  background-color: #333333;
+}
+
+.navbar__item>a {
+  font-size: 20px;
+  display: block;
+  color: navajowhite;
+  text-align: center;
+  text-decoration: none;
+  padding: 8px;
+}
+
+.active_navitem {
+  background-color: cadetblue;
+}
+
+.navbar__item:hover:not(.active_navitem) {
+  background-color: #111111;
+}
+
+p {
+  font-size: 20px;
+}
