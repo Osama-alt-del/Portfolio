@@ -14,17 +14,49 @@
         <li class = "navbar__item active_navitem"><a href="./projects.html">Projects</a></li>
         <li class = "navbar__item"><a href="./blog.html">Blog</a></li>
         <li class = "navbar__item"><a href="./cv.html">CV</a></li>
-        <li class = "navbar__item" style = "float:right"><a href="./about.html">About</a></li>
         <div class = "navbar__item dropdown" style = "float:right">
           <div class = "dropdownbtn">
             Languages  <i class = "fa fa-caret-down"></i>
           </div>
           <div class = "dropdown-content">
             <a href="./home.html">English</a>
-            <a href="/">日本語</a>
+            <a href="../japanesePages/homej.html">日本語</a>
           </div>
         </div>
       </ul>
     </nav>
+    <div class = "fadeFirst">
+      <div class = "project_card" onclick = "openProjects(this)">
+        <img src="../images/PythonLogo.png" alt="PythonLogo">
+        <h1>Python Projects</h1>
+        <i class = "fa fa-caret-down" style = "margin-left: auto"></i> 
+      </div>
+      <div class = "project_card" onclick = "openProjects(this)">
+        <img src="../images/CppLogo.png" alt="CppLogo">
+        <h1>C++ Projects</h1>
+        <i class = "fa fa-caret-down" style = "margin-left: auto"></i> 
+      </div>
+      <div class = "project_card" onclick = "openProjects(this)">
+        <img src="../images/FlutterLogo.png" alt="FlutterLogo">
+        <h1>Flutter Projects</h1>
+        <i class = "fa fa-caret-down" style = "margin-left: auto"></i> 
+      </div>
+      <div class = "project_card web_project_card" onclick = "openProjects(this)">
+        <img src="../images/Html logo.png" alt="Html Logo">
+        <img src="../images/CSS Logo.png" alt="CSS Logo">
+        <img src="../images/JSLogo.png" alt="JS Logo">
+        <h1>HTML CSS JS Projects</h1>
+        <i class = "fa fa-caret-down" style = "margin-left: auto"></i> 
+      </div>
+    </div>
+  <footer>
+    <div class = "bottom__bar">
+      <ul class = "bottom__bar__list">
+        <li class = "bottom_bar_list_item "><a href = "mailto:abdalghanyosama@gmail.com" >Email</a></li>
+        <li class = "bottom_bar_list_item"><a target = "_blank"href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details">Linkedin</a></li>
+      </ul>
+    </div>
+  </footer>
   </body>
+  <script src = "../script.js"></script>
 </html>
