@@ -104,11 +104,16 @@ p {
 .project_card {
   margin: 10px 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   border: thick inset cadetblue;
   border-radius: 10px;
   overflow: hidden;
   height: 165px;
+}
+
+.card_title {
+  display: flex;
+  flex-direction: row;
 }
 
 .project_card img {
@@ -132,6 +137,35 @@ p {
   font-size: 40px;
 
 }
+
+.projectContent {
+  display: hidden;
+}
+
+.projectContent_Container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 20px 20px 20px;
+}
+
+.projectSelector {
+  height: 370px;
+  overflow-y: auto;
+  margin-right: 20px;
+}
+
+.projectItem {
+  font-size: 20px;
+}
+
+.verticalRule {
+  width: 1px;
+  height: 350px;
+  background-color: black;
+  margin-top: 20px;
+}
+
+
 
 .skill_card {
   display: flex;
@@ -336,5 +370,54 @@ p {
   to {
     font-size: 26px;
     margin-top: 45px;
+  }
+}
+
+@keyframes getSmallerArrow {
+  from {
+    font-size: 40px;
+    margin: 50px;
+    margin-left: auto;
+  }
+
+  to {
+    font-size: 20px;
+    margin: 40px;
+    margin-left: auto;
+  }
+}
+
+@keyframes getLargerArrow {
+  from {
+    font-size: 20px;
+    margin: 40px;
+    margin-left: auto;
+  }
+
+  to {
+    font-size: 40px;
+    margin: 50px;
+    margin-left: auto;
+  }
+}
+
+@keyframes showContent {
+  from {
+    display: hidden;
+  }
+
+  to {
+    display: block;
+  }
+}
+
+
+@keyframes hideContent {
+  from {
+    display: block;
+  }
+
+  to {
+    display: hidden;
   }
 }
