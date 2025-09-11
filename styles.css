@@ -142,30 +142,53 @@ p {
   display: hidden;
 }
 
+
 .projectContent_Container {
   display: flex;
   flex-direction: row;
-  margin: 0px 20px 20px 20px;
+  margin: 0px 20px 20px 10px;
 }
 
 .projectSelector {
   height: 370px;
   overflow-y: auto;
-  margin-right: 20px;
+  margin: 20px 20px 0px 0px;
 }
 
+.projectList {
+  list-style-type: circle;
+}
+
+.projectItem:hover {
+  color: cadetblue;
+  text-decoration: underline;
+  list-style-type: disc;
+}
+
+
 .projectItem {
-  font-size: 20px;
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.active {
+  color: cadetblue;
+  list-style-type: disc;
 }
 
 .verticalRule {
   width: 1px;
-  height: 350px;
+  height: 360px;
   background-color: black;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
-
+.projectOverview {
+  height: 370px;
+  width: 1100px;
+  margin-top: 5px;
+  overflow: auto;
+}
 
 .skill_card {
   display: flex;
@@ -356,14 +379,14 @@ p {
   }
 
   to {
-    font-size: 14px;
+    font-size: 20px;
     margin-top: 25px;
   }
 }
 
 @keyframes getLargerTitle {
   from {
-    font-size: 14px;
+    font-size: 20px;
     margin-top: 25px;
   }
 
