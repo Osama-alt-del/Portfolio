@@ -6,6 +6,7 @@ body {
   margin: 0;
   background-color: white;
   font-family: monospace;
+  overflow-x: hidden;
 }
 
 h1,
@@ -228,6 +229,9 @@ p {
   margin: 20px;
 }
 
+.SoftwareSkills {
+  width: 100vw;
+}
 
 .skill_card {
   display: flex;
@@ -249,15 +253,15 @@ p {
 }
 
 .programming_lang_div .skill_card img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
-  margin: 30px 70px;
+  margin: 30px 60px;
 }
 
 .IDE_div .skill_card img {
-  width: 200px;
-  margin: 30px 100px;
+  width: 150px;
+  margin: 30px 70px;
   height: auto;
 }
 
