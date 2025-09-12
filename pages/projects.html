@@ -14,17 +14,118 @@
         <li class = "navbar__item active_navitem"><a href="./projects.html">Projects</a></li>
         <li class = "navbar__item"><a href="./blog.html">Blog</a></li>
         <li class = "navbar__item"><a href="./cv.html">CV</a></li>
-        <li class = "navbar__item" style = "float:right"><a href="./about.html">About</a></li>
         <div class = "navbar__item dropdown" style = "float:right">
           <div class = "dropdownbtn">
             Languages  <i class = "fa fa-caret-down"></i>
           </div>
           <div class = "dropdown-content">
             <a href="./home.html">English</a>
-            <a href="/">日本語</a>
+            <a href="../japanesePages/homej.html">日本語</a>
           </div>
         </div>
       </ul>
     </nav>
+    <div class = "fadeFirst">
+      <div class = "project_card" >
+        <div class = "card_title">
+          <img class= "Logo" src="../images/PythonLogo.png" alt="PythonLogo">
+          <h1>Python Projects</h1>
+          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
+        </div>
+        <div class = "projectContent">
+          <hr style = "border: 1px solid black; margin: 0px 20px;">
+          <div class = "projectContent_Container">
+            <div class = "projectSelector">
+              <ul class = "projectList">
+                <li class = "projectItem" onclick = "displayContentPython(this);"><b>Gasious Simulation</b></li>
+                <li class = "projectItem"onclick = "displayContentPython(this);"><b>Fibonacci</b></li>
+              </ul>
+            </div>
+            <span class = "verticalRule"></span>
+            <div class = "projectOverview">
+            <!--This is the div that shows the projects, it changes over time-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = "project_card" >
+        <div class = "card_title">
+          <img class= "Logo" src="../images/CppLogo.png" alt="C++ logo">
+          <h1>C++ Projects</h1>
+          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
+        </div>
+        <div class = "projectContent">
+          <hr style = "border: 1px solid black; margin: 0px 20px;">
+          <div class = "projectContent_Container">
+            <div class = "projectSelector">
+              <ul class = "projectList">
+                <li class = "projectItem" onclick = "displayContentCpp(this);"><b>Project 1</b></li>
+                <li class = "projectItem"onclick = "displayContentCpp(this);"><b>Project 2</b></li>
+              </ul>
+            </div>
+            <span class = "verticalRule"></span>
+            <div class = "projectOverview">
+            <!--This is the div that shows the projects, it changes over time-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = "project_card" >
+        <div class = "card_title">
+          <img class= "Logo" src="../images/FlutterLogo.png" alt="Flutter logo">
+          <h1>Flutter Projects</h1>
+          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
+        </div>
+        <div class = "projectContent">
+          <hr style = "border: 1px solid black; margin: 0px 20px;">
+          <div class = "projectContent_Container">
+            <div class = "projectSelector">
+              <ul class = "projectList">
+                <li class = "projectItem" onclick = "displayContentFlutter(this);"><b>Project 1</b></li>
+                <li class = "projectItem"onclick = "displayContentFlutter(this);"><b>Project 2</b></li>
+              </ul>
+            </div>
+            <span class = "verticalRule"></span>
+            <div class = "projectOverview">
+            <!--This is the div that shows the projects, it changes over time-->
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class = "project_card web_project_card" >
+        <div class = "card_title">
+          <img class= "Logo" src="../images/Html logo.png" alt="HTML logo">
+          <img class= "Logo" src="../images/CSS Logo.png" alt="CSS logo">
+          <img class= "Logo" src="../images/JSLogo.png" alt="JS logo">
+
+          <h1>HTML, CSS, JS Projects</h1>
+          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
+        </div>
+        <div class = "projectContent">
+          <hr style = "border: 1px solid black; margin: 0px 20px;">
+          <div class = "projectContent_Container">
+            <div class = "projectSelector">
+              <ul class = "projectList">
+                <li class = "projectItem" onclick = "displayContentWeb(this);"><b>Project 1</b></li>
+                <li class = "projectItem"onclick = "displayContentWeb(this);"><b>Project 2</b></li>
+              </ul>
+            </div>
+            <span class = "verticalRule"></span>
+            <div class = "projectOverview">
+            <!--This is the div that shows the projects, it changes over time-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <footer>
+    <div class = "bottom__bar">
+      <ul class = "bottom__bar__list">
+        <li class = "bottom_bar_list_item "><a href = "mailto:abdalghanyosama@gmail.com" >Email</a></li>
+        <li class = "bottom_bar_list_item"><a target = "_blank"href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details">Linkedin</a></li>
+      </ul>
+    </div>
+  </footer>
   </body>
+  <script src = "../script.js"></script>
 </html>
