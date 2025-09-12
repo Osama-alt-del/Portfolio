@@ -6,6 +6,7 @@ body {
   margin: 0;
   background-color: white;
   font-family: monospace;
+  overflow-x: hidden;
 }
 
 h1,
@@ -101,6 +102,138 @@ p {
   justify-content: center;
 }
 
+.project_card {
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  border: thick inset cadetblue;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 165px;
+}
+
+.card_title {
+  display: flex;
+  flex-direction: row;
+}
+
+.project_card .Logo {
+  width: 100px;
+  height: 100px;
+  margin: 30px 30px;
+}
+
+.project_card .card_title h1 {
+  margin-top: 45px;
+}
+
+
+.web_project_card img {
+  margin: 30px 5px !important;
+}
+
+
+.project_card i {
+  margin: 50px;
+  font-size: 40px;
+
+}
+
+.projectContent {
+  display: hidden;
+}
+
+
+.projectContent_Container {
+  display: flex;
+  flex-direction: row;
+  margin: 0px 20px 20px 10px;
+}
+
+.projectSelector {
+  height: 370px;
+  overflow-y: auto;
+  margin: 20px 20px 0px 0px;
+}
+
+.projectList {
+  list-style-type: circle;
+}
+
+.projectItem:hover {
+  color: cadetblue;
+  text-decoration: underline;
+  list-style-type: disc;
+  cursor: pointer;
+}
+
+
+.projectItem {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.projectItem::marker {
+  font-size: 22px;
+}
+
+.active {
+  color: cadetblue;
+  list-style-type: disc;
+}
+
+.verticalRule {
+  width: 1px;
+  height: 360px;
+  background-color: black;
+  margin-top: 10px;
+}
+
+.projectOverview {
+  height: 370px;
+  overflow: auto;
+  width: 1100px;
+}
+
+.projectOverview h1 {
+  margin: 0px;
+}
+
+.title_github {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title_github>p {
+  margin-right: 70px;
+}
+
+.Content {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Content .imageDiv {
+  margin: 0px 20px 20px 0px;
+}
+
+.Content .imageDiv>img {
+  width: 250px;
+  height: 250px;
+}
+
+.projectLinks {
+  margin: 20px;
+}
+
+.SoftwareSkills {
+  width: 100vw;
+}
+
+
 .skill_card {
   display: flex;
   flex-direction: column;
@@ -121,21 +254,25 @@ p {
 }
 
 .programming_lang_div .skill_card img {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   object-fit: contain;
-  margin: 30px 70px;
+  margin: 30px 60px;
 }
 
 .IDE_div .skill_card img {
-  width: 200px;
+  width: 150px;
+  margin: 30px 70px;
   height: auto;
-  margin: 30px 100px;
 }
 
-.languages_div img {
+.languages_div .skill_card {
+  margin-bottom: 50px;
+}
+
+.languages_div .skill_card img {
   width: 500px;
-  height: auto;
+  height: 180px;
   margin: 40px 120px;
 }
 
@@ -178,6 +315,17 @@ p {
   color: cadetblue;
   text-decoration: underline;
 }
+
+.Link {
+  text-decoration: none;
+  color: grey;
+}
+
+.Link:hover {
+  color: cadetblue;
+  text-decoration: underline;
+}
+
 
 p {
   font-size: 20px;
@@ -230,5 +378,124 @@ p {
   to {
     opacity: 1;
     transform: translateY(0px);
+  }
+}
+
+@keyframes openProjects {
+  from {
+    height: 165px;
+  }
+
+  to {
+    height: 500px;
+  }
+}
+
+@keyframes closeProjects {
+  from {
+    height: 500px;
+  }
+
+  to {
+    height: 165px;
+  }
+
+}
+
+@keyframes getSmaller {
+  from {
+    width: 100px;
+    height: 100px;
+  }
+
+  to {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+
+@keyframes getLarger {
+  from {
+    width: 50px;
+    height: 50px;
+  }
+
+  to {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@keyframes getSmallerTitle {
+  from {
+    font-size: 26px;
+    margin-top: 45px;
+  }
+
+  to {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+}
+
+@keyframes getLargerTitle {
+  from {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+
+  to {
+    font-size: 26px;
+    margin-top: 45px;
+  }
+}
+
+@keyframes getSmallerArrow {
+  from {
+    font-size: 40px;
+    margin: 50px;
+    margin-left: auto;
+  }
+
+  to {
+    font-size: 20px;
+    margin: 40px;
+    margin-left: auto;
+  }
+}
+
+@keyframes getLargerArrow {
+  from {
+    font-size: 20px;
+    margin: 40px;
+    margin-left: auto;
+  }
+
+  to {
+    font-size: 40px;
+    margin: 50px;
+    margin-left: auto;
+  }
+}
+
+@keyframes showContent {
+  from {
+    display: hidden;
+  }
+
+  to {
+    display: block;
+  }
+}
+
+
+@keyframes hideContent {
+  from {
+    display: block;
+  }
+
+  to {
+    display: hidden;
   }
 }
