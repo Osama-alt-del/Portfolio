@@ -28,7 +28,7 @@
     <div class = "fadeFirst">
       <div class = "project_card" >
         <div class = "card_title">
-          <img src="../images/PythonLogo.png" alt="PythonLogo">
+          <img class= "Logo" src="../images/PythonLogo.png" alt="PythonLogo">
           <h1>Python Projects</h1>
           <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
         </div>
@@ -37,77 +37,85 @@
           <div class = "projectContent_Container">
             <div class = "projectSelector">
               <ul class = "projectList">
-                <li class = "projectItem" onclick = "displayContentPython(this);">Gasious Simulation</li>
-                <li class = "projectItem"onclick = "displayContentPython(this);">Fibonacci</li>
-                <li class = "projectItem"onclick = "displayContentPython(this);">Jumper</li>
-                <li class = "projectItem"onclick = "displayContentPython(this);">Space Invaders</li>
+                <li class = "projectItem" onclick = "displayContentPython(this);"><b>Gasious Simulation</b></li>
+                <li class = "projectItem"onclick = "displayContentPython(this);"><b>Fibonacci</b></li>
               </ul>
             </div>
             <span class = "verticalRule"></span>
             <div class = "projectOverview">
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
-              <p>hi</p>
+            <!--This is the div that shows the projects, it changes over time-->
             </div>
           </div>
         </div>
       </div>
-      <div class = "project_card" onclick = "openProjects(this); getSmaller(this);">
-        <img src="../images/CppLogo.png" alt="CppLogo">
-        <h1>C++ Projects</h1>
-        <i class = "fa fa-caret-down" style = "margin-left: auto"></i> 
+      <div class = "project_card" >
+        <div class = "card_title">
+          <img class= "Logo" src="../images/CppLogo.png" alt="C++ logo">
+          <h1>C++ Projects</h1>
+          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
+        </div>
+        <div class = "projectContent">
+          <hr style = "border: 1px solid black; margin: 0px 20px;">
+          <div class = "projectContent_Container">
+            <div class = "projectSelector">
+              <ul class = "projectList">
+                <li class = "projectItem" onclick = "displayContentCpp(this);"><b>Project 1</b></li>
+                <li class = "projectItem"onclick = "displayContentCpp(this);"><b>Project 2</b></li>
+              </ul>
+            </div>
+            <span class = "verticalRule"></span>
+            <div class = "projectOverview">
+            <!--This is the div that shows the projects, it changes over time-->
+            </div>
+          </div>
+        </div>
       </div>
-      <div class = "project_card" onclick = "openProjects(this); getSmaller(this);">
-        <img src="../images/FlutterLogo.png" alt="FlutterLogo">
-        <h1>Flutter Projects</h1>
-        <i class = "fa fa-caret-down" style = "margin-left: auto"></i> 
+      <div class = "project_card" >
+        <div class = "card_title">
+          <img class= "Logo" src="../images/FlutterLogo.png" alt="Flutter logo">
+          <h1>Flutter Projects</h1>
+          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
+        </div>
+        <div class = "projectContent">
+          <hr style = "border: 1px solid black; margin: 0px 20px;">
+          <div class = "projectContent_Container">
+            <div class = "projectSelector">
+              <ul class = "projectList">
+                <li class = "projectItem" onclick = "displayContentFlutter(this);"><b>Project 1</b></li>
+                <li class = "projectItem"onclick = "displayContentFlutter(this);"><b>Project 2</b></li>
+              </ul>
+            </div>
+            <span class = "verticalRule"></span>
+            <div class = "projectOverview">
+            <!--This is the div that shows the projects, it changes over time-->
+            </div>
+          </div>
+        </div>
       </div>
-      <div class = "project_card web_project_card" onclick = "openProjects(this); getSmaller(this);">
-        <img src="../images/Html logo.png" alt="Html Logo">
-        <img src="../images/CSS Logo.png" alt="CSS Logo">
-        <img src="../images/JSLogo.png" alt="JS Logo">
-        <h1>HTML CSS JS Projects</h1>
-        <i class = "fa fa-caret-down" style = "margin-left: auto"></i> 
+      <div class = "project_card web_project_card" >
+        <div class = "card_title">
+          <img class= "Logo" src="../images/Html logo.png" alt="HTML logo">
+          <img class= "Logo" src="../images/CSS Logo.png" alt="CSS logo">
+          <img class= "Logo" src="../images/JSLogo.png" alt="JS logo">
+
+          <h1>HTML, CSS, JS Projects</h1>
+          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
+        </div>
+        <div class = "projectContent">
+          <hr style = "border: 1px solid black; margin: 0px 20px;">
+          <div class = "projectContent_Container">
+            <div class = "projectSelector">
+              <ul class = "projectList">
+                <li class = "projectItem" onclick = "displayContentWeb(this);"><b>Project 1</b></li>
+                <li class = "projectItem"onclick = "displayContentWeb(this);"><b>Project 2</b></li>
+              </ul>
+            </div>
+            <span class = "verticalRule"></span>
+            <div class = "projectOverview">
+            <!--This is the div that shows the projects, it changes over time-->
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   <footer>
