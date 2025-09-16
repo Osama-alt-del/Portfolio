@@ -275,7 +275,41 @@ p {
   margin: 40px 120px;
 }
 
+.blogEntry {
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  border: thick inset cadetblue;
+  border-radius: 6px;
+  margin: 20px;
+}
 
+.titleMessage {
+  margin-bottom: 0px;
+}
+
+.coverMessage {
+  font-size: 20px;
+  margin-top: 0px;
+}
+
+.skillHeading {
+  margin-bottom: 0px;
+}
+
+.dateTitle {
+  display: flex;
+  flex-direction: row;
+}
+
+.dateTitle>p {
+  margin-left: auto;
+}
+
+.dateTitle>h1 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 
 .bottom__bar {
   position: relative;
@@ -283,6 +317,7 @@ p {
   margin: 0;
   padding: 0;
 }
+
 
 .bottom__bar__list {
   overflow: hidden;

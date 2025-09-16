@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
     <meta charset="UTF-8">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,23 +14,22 @@
         <li class = "navbar__item"><a href="./projectsj.html">プロジェクト</a></li>
         <li class = "navbar__item"><a href="./blogj.html">ブログ</a></li>
         <li class = "navbar__item"><a href="./cvj.html">履歴書</a></li>
-        <li class = "navbar__item" style = "float:right"><a href="./aboutj.html">概要</a></li>
         <div class = "navbar__item dropdown" style = "float:right">
           <div class = "dropdownbtn">
-            言語　<i class = "fa fa-caret-down"></i>
+            言語 <i class = "fa fa-caret-down"></i>
           </div>
           <div class = "dropdown-content">
             <a href="../pages/home.html">English</a>
-            <a href="./homej.html">日本語</a>
+            <a href="./">日本語</a>
           </div>
         </div>
       </ul>
     </nav>
-    <h1 class = "fadeFirst">オサマと申します！</h1>
-    <p class = "fadeFirst">言語が大好き！</p>
-    <div class = "fadeSecond">
-      <h2>ソフトウェア能力</h2>
-      <hr>
+    <h1 class = "titleMessage fadeFirst">こんにちは、オサマと申します！</h1>
+    <p class = "coverMessage fadeFirst">色んな言語を学ぶのに熱心があるソフトウェア工学の大学生</p>
+    <div class = "SoftwareSkills fadeSecond">
+      <h2 class = "skillHeading">ソフトウェア能力</h2>
+      <hr style = "margin: 0px 30px 0px 20px">
       <div class="programming_lang_div">
         <div class="skill_card">
           <img src="../images/PythonLogo.png" alt="Python">
@@ -82,21 +81,27 @@
       </div>
     </div>
 
-    <div class = "fadeThird">
-      <h2>言語能力</h2>
-      <hr>
+    <div class = "LanguageSkills fadeThird">
+      <h2 class = "skillHeading">言語能力</h2>
+      <hr style = "margin: 0px 30px 0px 20px">
       <div class = "languages_div">
-        <img src="../images/Arabic.png" alt="Arabic">
-        <img src="../images/Japanese.png" alt="Japanese">
+        <div class="skill_card">
+          <img src="../images/Arabic.png" alt="Arabic">
+          <div class="skill_bar"><div class="skill_level" style="width: 70%; background-color: black"></div></div>
+        </div>
+        <div class="skill_card">
+          <img src="../images/Japanese.png" alt="Japanese">
+          <div class="skill_bar"><div class="skill_level" style="width: 75%; background-color: black"></div></div>
+        </div>
       </div>
     </div>
-  <footer>
-    <div class = "bottom__bar">
-      <ul class = "bottom__bar__list">
-        <li class = "bottom_bar_list_item "><a href = "mailto:abdalghanyosama@gmail.com" >メール</a></li>
-        <li class = "bottom_bar_list_item"><a target = "_blank"href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details">Linkedin</a></li>
-      </ul>
-    </div>
-  </footer>
+    <footer>
+      <div class = "bottom__bar">
+        <ul class = "bottom__bar__list">
+          <li class = "bottom_bar_list_item "><a href = "mailto:abdalghanyosama@gmail.com" >メール</a></li>
+          <li class = "bottom_bar_list_item"><a target = "_blank"href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details">Linkedin</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
