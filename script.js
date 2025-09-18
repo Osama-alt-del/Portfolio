@@ -186,7 +186,25 @@ function displayContentWeb(item) {
   items = projectView.parentElement.querySelectorAll(".projectItem");
   console.log(items);
   if (items[0].classList.contains("active")) {
-    projectView.innerHTML = "<p>Web project 1</p>";
+    projectView.innerHTML = `
+              <div class = "title_github">
+                <h1>Portfolio</h1>
+                <p>
+                  <a target = "_blank" class = "Link"href="https://github.com/Osama-alt-del/Portfolio">Github</a>
+                </p>
+              </div>
+              <div class = "Content">
+                <div class = "Description">
+                  <p style = "margin-top : 0px;">
+                    This is the website that you see now! <br><br>
+                    This is my first ever non Flutter web project!
+                  </p>
+
+                  <div class = "imageDiv">
+                    <img class = "portfolio_image" src="../images/Portfolio.gif" alt="Portfolio Gif">
+                  </div>
+                </div>
+              </div>`;
   } else if (items[1].classList.contains("active")) {
     projectView.innerHTML = `<p>item 2</p>`;
   }

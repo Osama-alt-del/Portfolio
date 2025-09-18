@@ -225,6 +225,11 @@ p {
   height: 250px;
 }
 
+.portfolio_image {
+  width: 1000px !important;
+  height: auto !important;
+}
+
 .projectLinks {
   margin: 20px;
 }
