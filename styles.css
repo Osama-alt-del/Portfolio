@@ -289,6 +289,20 @@ p {
   margin: 20px;
 }
 
+.blogEntry img {
+  margin: 10px 20px;
+  border-radius: 10px;
+  width: 850px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blogImageDiv {
+  display: flex;
+  flex-direction: row;
+}
+
 .titleMessage {
   margin-bottom: 0px;
 }

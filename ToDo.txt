@@ -1,0 +1,7 @@
+Website:
+ - Collect images of projects you've done and post them on the home page in a nice collage.
+ - Make nvim-surround always work and make it work for html as well (read documentation first)
+ - Finish the bottom bar (add contact and stuff)
+ - Finish the home page (collage, about myself, some images added (maybe you'll need to use javascript or something here to always add pictures (do later)))
+
+
