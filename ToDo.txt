@@ -1,7 +1,9 @@
 Website:
  - Collect images of projects you've done and post them on the home page in a nice collage.
- - Make nvim-surround always work and make it work for html as well (read documentation first)
  - Finish the bottom bar (add contact and stuff)
- - Finish the home page (collage, about myself, some images added (maybe you'll need to use javascript or something here to always add pictures (do later)))
+ - Finish the home page (collage, about myself, some images added, where I've worked, what I've done at work)
+ - Fix projects page, because when it opens it is too small sometimes
+ - Try look at website on other computers
+ - Host the website
 
 

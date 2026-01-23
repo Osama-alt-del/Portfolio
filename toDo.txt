@@ -1,2 +1,0 @@
-- Make icons on home page a little bit smaller.
-- Make the icons buttons that lead to the project page with the language.
