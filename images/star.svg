@@ -1,0 +1,4 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <polygon points="50,7 61.8,35 92,37 69,56.5 76.5,87 50,70.5 23.5,87 31,56.5 8,37 38.2,35" fill="#FFD447" stroke="#3B2A5C" stroke-width="6" stroke-linejoin="round"/>
+  <ellipse cx="45" cy="40" rx="5" ry="9" fill="#fff" opacity="0.75" transform="rotate(25 45 40)"/>
+</svg>
