@@ -1,131 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>プロジェクト · Osama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="../styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <nav class = "navbar">
-      <ul class = "navbar__container">
-        <li class = "navbar__item "><a href="./homej.html">ホーム</a></li>
-        <li class = "navbar__item active_navitem"><a href="./projectsj.html">プロジェクト</a></li>
-        <li class = "navbar__item"><a href="./blogj.html">ブログ</a></li>
-        <li class = "navbar__item"><a href="./cvj.html">履歴書</a></li>
-        <div class = "navbar__item dropdown" style = "float:right">
-          <div class = "dropdownbtn">
-            言語 <i class = "fa fa-caret-down"></i>
-          </div>
-          <div class = "dropdown-content">
-            <a href="../pages/home.html">English</a>
-            <a href="../japanesePages/homej.html">日本語</a>
-          </div>
-        </div>
-      </ul>
-    </nav>
-    <div class = "fadeFirst">
-      <div class = "project_card" >
-        <div class = "card_title">
-          <img class= "Logo" src="../images/PythonLogo.png" alt="PythonLogo">
-          <h1>パイソンのプロジェクト</h1>
-          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
-        </div>
-        <div class = "projectContent">
-          <hr style = "border: 1px solid black; margin: 0px 20px;">
-          <div class = "projectContent_Container">
-            <div class = "projectSelector">
-              <ul class = "projectList">
-                <li class = "projectItem" onclick = "displayContentPythonj(this);"><b>ガスシミュレーション</b></li>
-                <li class = "projectItem"onclick = "displayContentPythonj(this);"><b>フィボナッチビジュアル</b></li>
-              </ul>
+    <header class = "navbar">
+      <nav class = "navbar__inner">
+        <a class = "brand" href="./homej.html"><span class = "brand_mark">&lt;/&gt;</span>Osama</a>
+        <input type = "checkbox" id = "nav-toggle" class = "nav_toggle">
+        <label for = "nav-toggle" class = "nav_burger" aria-label = "メニュー"><i class = "fa fa-bars"></i></label>
+        <ul class = "navbar__container">
+          <li class = "navbar__item"><a href="./homej.html">ホーム</a></li>
+          <li class = "navbar__item active_navitem"><a href="./projectsj.html">プロジェクト</a></li>
+          <li class = "navbar__item"><a href="./blogj.html">ブログ</a></li>
+          <li class = "navbar__item"><a href="./cvj.html">履歴書</a></li>
+          <li class = "navbar__item dropdown">
+            <button class = "dropdownbtn" type = "button"><i class = "fa fa-globe"></i> 言語 <i class = "fa fa-caret-down"></i></button>
+            <div class = "dropdown-content">
+              <a href="../pages/projects.html">English</a>
+              <a href="./projectsj.html">日本語</a>
             </div>
-            <span class = "verticalRule"></span>
-            <div class = "projectOverview">
-            <!--This is the div that shows the projects, it changes over time-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class = "project_card" >
-        <div class = "card_title">
-          <img class= "Logo" src="../images/CppLogo.png" alt="C++ logo">
-          <h1>C++のプロジェク</h1>
-          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
-        </div>
-        <div class = "projectContent">
-          <hr style = "border: 1px solid black; margin: 0px 20px;">
-          <div class = "projectContent_Container">
-            <div class = "projectSelector">
-              <ul class = "projectList">
-                <li class = "projectItem" onclick = "displayContentCpp(this);"><b>Project 1</b></li>
-                <li class = "projectItem"onclick = "displayContentCpp(this);"><b>Project 2</b></li>
-              </ul>
-            </div>
-            <span class = "verticalRule"></span>
-            <div class = "projectOverview">
-            <!--This is the div that shows the projects, it changes over time-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class = "project_card" >
-        <div class = "card_title">
-          <img class= "Logo" src="../images/FlutterLogo.png" alt="Flutter logo">
-          <h1>Flutterのプロジェクト</h1>
-          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
-        </div>
-        <div class = "projectContent">
-          <hr style = "border: 1px solid black; margin: 0px 20px;">
-          <div class = "projectContent_Container">
-            <div class = "projectSelector">
-              <ul class = "projectList">
-                <li class = "projectItem" onclick = "displayContentFlutter(this);"><b>Project 1</b></li>
-                <li class = "projectItem"onclick = "displayContentFlutter(this);"><b>Project 2</b></li>
-              </ul>
-            </div>
-            <span class = "verticalRule"></span>
-            <div class = "projectOverview">
-            <!--This is the div that shows the projects, it changes over time-->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class = "project_card web_project_card" >
-        <div class = "card_title">
-          <img class= "Logo" src="../images/Html logo.png" alt="HTML logo">
-          <img class= "Logo" src="../images/CSS Logo.png" alt="CSS logo">
-          <img class= "Logo" src="../images/JSLogo.png" alt="JS logo">
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-          <h1>HTML, CSS, JSのプロジェクト</h1>
-          <i class = "fa fa-caret-down" style = "margin-left: auto" onclick = "openProjects(this)"></i> 
-        </div>
-        <div class = "projectContent">
-          <hr style = "border: 1px solid black; margin: 0px 20px;">
-          <div class = "projectContent_Container">
-            <div class = "projectSelector">
-              <ul class = "projectList">
-                <li class = "projectItem" onclick = "displayContentWeb(this);"><b>Project 1</b></li>
-                <li class = "projectItem"onclick = "displayContentWeb(this);"><b>Project 2</b></li>
-              </ul>
+    <main class = "container">
+      <section class = "page_header fadeFirst">
+        <h1>プロジェクト</h1>
+        <p>学びながら作ったもの。カテゴリーを選んでください。</p>
+      </section>
+
+      <div class = "projects_list fadeSecond">
+        <div class = "project_card">
+          <div class = "card_title" onclick = "openProjects(this)">
+            <div class = "card_logos"><img class= "Logo" src="../images/PythonLogo.png" alt="PythonLogo"></div>
+            <h2>パイソンのプロジェクト</h2>
+            <i class = "fa fa-chevron-down card_arrow"></i>
+          </div>
+          <div class = "projectContent">
+            <div class = "projectContent_inner">
+              <div class = "projectContent_Container">
+                <div class = "projectSelector">
+                  <ul class = "projectList">
+                    <li class = "projectItem" onclick = "displayContentPythonj(this);"><b>ガスシミュレーション</b></li>
+                    <li class = "projectItem" onclick = "displayContentPythonj(this);"><b>フィボナッチビジュアル</b></li>
+                  </ul>
+                </div>
+                <div class = "projectOverview">
+                  <p class = "overview_placeholder">プロジェクトを選択してください。</p>
+                </div>
+              </div>
             </div>
-            <span class = "verticalRule"></span>
-            <div class = "projectOverview">
-            <!--This is the div that shows the projects, it changes over time-->
+          </div>
+        </div>
+
+        <div class = "project_card">
+          <div class = "card_title" onclick = "openProjects(this)">
+            <div class = "card_logos"><img class= "Logo" src="../images/CppLogo.png" alt="C++ logo"></div>
+            <h2>C++のプロジェクト</h2>
+            <i class = "fa fa-chevron-down card_arrow"></i>
+          </div>
+          <div class = "projectContent">
+            <div class = "projectContent_inner">
+              <div class = "projectContent_Container">
+                <div class = "projectSelector">
+                  <ul class = "projectList">
+                    <li class = "projectItem" onclick = "displayContentCpp(this);"><b>Project 1</b></li>
+                    <li class = "projectItem" onclick = "displayContentCpp(this);"><b>Project 2</b></li>
+                  </ul>
+                </div>
+                <div class = "projectOverview">
+                  <p class = "overview_placeholder">プロジェクトを選択してください。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class = "project_card">
+          <div class = "card_title" onclick = "openProjects(this)">
+            <div class = "card_logos"><img class= "Logo" src="../images/FlutterLogo.png" alt="Flutter logo"></div>
+            <h2>Flutterのプロジェクト</h2>
+            <i class = "fa fa-chevron-down card_arrow"></i>
+          </div>
+          <div class = "projectContent">
+            <div class = "projectContent_inner">
+              <div class = "projectContent_Container">
+                <div class = "projectSelector">
+                  <ul class = "projectList">
+                    <li class = "projectItem" onclick = "displayContentFlutter(this);"><b>Project 1</b></li>
+                    <li class = "projectItem" onclick = "displayContentFlutter(this);"><b>Project 2</b></li>
+                  </ul>
+                </div>
+                <div class = "projectOverview">
+                  <p class = "overview_placeholder">プロジェクトを選択してください。</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class = "project_card web_project_card">
+          <div class = "card_title" onclick = "openProjects(this)">
+            <div class = "card_logos">
+              <img class= "Logo" src="../images/Html logo.png" alt="HTML logo">
+              <img class= "Logo" src="../images/CSS Logo.png" alt="CSS logo">
+              <img class= "Logo" src="../images/JSLogo.png" alt="JS logo">
+            </div>
+            <h2>HTML, CSS, JSのプロジェクト</h2>
+            <i class = "fa fa-chevron-down card_arrow"></i>
+          </div>
+          <div class = "projectContent">
+            <div class = "projectContent_inner">
+              <div class = "projectContent_Container">
+                <div class = "projectSelector">
+                  <ul class = "projectList">
+                    <li class = "projectItem" onclick = "displayContentWeb(this);"><b>Project 1</b></li>
+                    <li class = "projectItem" onclick = "displayContentWeb(this);"><b>Project 2</b></li>
+                  </ul>
+                </div>
+                <div class = "projectOverview">
+                  <p class = "overview_placeholder">プロジェクトを選択してください。</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <footer>
-      <div class = "bottom__bar">
+    </main>
+
+    <footer class = "bottom__bar">
+      <div class = "bottom__bar__inner">
+        <p class = "footer_note">© 2026 Osama · HTML, CSS &amp; JS で作成</p>
         <ul class = "bottom__bar__list">
-          <li class = "bottom_bar_list_item "><a href = "mailto:abdalghanyosama@gmail.com" >メール</a></li>
-          <li class = "bottom_bar_list_item"><a target = "_blank"href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details">Linkedin</a></li>
+          <li class = "bottom_bar_list_item"><a href = "mailto:abdalghanyosama@gmail.com"><i class = "fa fa-envelope"></i> メール</a></li>
+          <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details"><i class = "fa fa-linkedin"></i> Linkedin</a></li>
+          <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://github.com/Osama-alt-del"><i class = "fa fa-github"></i> GitHub</a></li>
         </ul>
       </div>
     </footer>
+    <script src = "../script.js"></script>
   </body>
-  <script src = "../script.js"></script>
 </html>

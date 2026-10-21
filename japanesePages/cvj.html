@@ -1,30 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title></title>
+    <title>履歴書 · Osama</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="../styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
   </head>
   <body>
-    <nav class = "navbar">
-      <ul class = "navbar__container">
-        <li class = "navbar__item"><a href="./homej.html">ホーム</a></li>
-        <li class = "navbar__item"><a href="./projectsj.html">プロジェクト</a></li>
-        <li class = "navbar__item"><a href="./blogj.html">ブログ</a></li>
-        <li class = "navbar__item active_navitem"><a href="./cvj.html">履歴書</a></li>
-        <div class = "navbar__item dropdown" style = "float:right">
-          <div class = "dropdownbtn">
-            言語 <i class = "fa fa-caret-down"></i>
-          </div>
-          <div class = "dropdown-content">
-            <a href="../pages/home.html">English</a>
-            <a href="../japanesePages/homej.html">日本語</a>
-          </div>
+    <header class = "navbar">
+      <nav class = "navbar__inner">
+        <a class = "brand" href="./homej.html"><span class = "brand_mark">&lt;/&gt;</span>Osama</a>
+        <input type = "checkbox" id = "nav-toggle" class = "nav_toggle">
+        <label for = "nav-toggle" class = "nav_burger" aria-label = "メニュー"><i class = "fa fa-bars"></i></label>
+        <ul class = "navbar__container">
+          <li class = "navbar__item"><a href="./homej.html">ホーム</a></li>
+          <li class = "navbar__item"><a href="./projectsj.html">プロジェクト</a></li>
+          <li class = "navbar__item"><a href="./blogj.html">ブログ</a></li>
+          <li class = "navbar__item active_navitem"><a href="./cvj.html">履歴書</a></li>
+          <li class = "navbar__item dropdown">
+            <button class = "dropdownbtn" type = "button"><i class = "fa fa-globe"></i> 言語 <i class = "fa fa-caret-down"></i></button>
+            <div class = "dropdown-content">
+              <a href="../pages/cv.html">English</a>
+              <a href="./cvj.html">日本語</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class = "container">
+      <section class = "page_header page_header_row fadeFirst">
+        <div>
+          <h1>履歴書</h1>
+          <p>学歴・経験・スキルをまとめました。</p>
         </div>
-      </ul>
-    </nav>
-    <embed class = "CV" src="../files/Osama_Zaid_CV.pdf">
+        <a class = "btn btn_primary" href="../files/Osama_Zaid_CV.pdf" download><i class = "fa fa-download"></i> PDFをダウンロード</a>
+      </section>
+      <div class = "cv_frame fadeSecond">
+        <embed class = "CV" src="../files/Osama_Zaid_CV.pdf" type="application/pdf">
+      </div>
+    </main>
+
+    <footer class = "bottom__bar">
+      <div class = "bottom__bar__inner">
+        <p class = "footer_note">© 2026 Osama · HTML, CSS &amp; JS で作成</p>
+        <ul class = "bottom__bar__list">
+          <li class = "bottom_bar_list_item"><a href = "mailto:abdalghanyosama@gmail.com"><i class = "fa fa-envelope"></i> メール</a></li>
+          <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details"><i class = "fa fa-linkedin"></i> Linkedin</a></li>
+          <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://github.com/Osama-alt-del"><i class = "fa fa-github"></i> GitHub</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
