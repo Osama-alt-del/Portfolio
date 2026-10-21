@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>履歴書 · Osama</title>
+    <script>document.documentElement.classList.add("js");</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
     <link href="../styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../images/kirby.svg">
+    <script src="../script.js" defer></script>
   </head>
   <body>
     <header class = "navbar">
       <nav class = "navbar__inner">
-        <a class = "brand" href="./homej.html"><span class = "brand_mark">&lt;/&gt;</span>Osama</a>
+        <a class = "brand" href="./homej.html"><img class = "brand_kirby" src="../images/kirby.svg" alt="">Osama</a>
         <input type = "checkbox" id = "nav-toggle" class = "nav_toggle">
         <label for = "nav-toggle" class = "nav_burger" aria-label = "メニュー"><i class = "fa fa-bars"></i></label>
         <ul class = "navbar__container">
@@ -32,27 +35,51 @@
       </nav>
     </header>
 
-    <main class = "container">
-      <section class = "page_header page_header_row fadeFirst">
-        <div>
-          <h1>履歴書</h1>
-          <p>学歴・経験・スキルをまとめました。</p>
+      <section class = "page_hero">
+        <div class = "sky" aria-hidden = "true">
+          <img class = "cloud cloud_1" src="../images/cloud.svg" alt="">
+          <img class = "cloud cloud_2" src="../images/cloud.svg" alt="">
+          <img class = "cloud cloud_3" src="../images/cloud.svg" alt="">
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "warp_star"></span>
         </div>
-        <a class = "btn btn_primary" href="../files/Osama_Zaid_CV.pdf" download><i class = "fa fa-download"></i> PDFをダウンロード</a>
+        <div class = "container page_hero_inner">
+          <div class = "page_hero_text">
+            <h1 class = "page_title bouncy">履歴書</h1>
+            <p class = "page_sub">学歴・経験・スキルをまとめました。</p>
+            <a class = "btn btn_primary" href="../files/Osama_Zaid_CV.pdf" download><i class = "fa fa-download"></i> PDFをダウンロード</a>
+          </div>
+          <div class = "page_hero_kirby" aria-hidden = "true">
+            <img class = "sitting" src="../images/kirby.svg" alt="">
+            <img class = "seat" src="../images/cloud.svg" alt="">
+          </div>
+        </div>
       </section>
-      <div class = "cv_frame fadeSecond">
+
+    <main class = "container">
+      <div class = "cv_frame reveal">
         <embed class = "CV" src="../files/Osama_Zaid_CV.pdf" type="application/pdf">
       </div>
     </main>
 
     <footer class = "bottom__bar">
-      <div class = "bottom__bar__inner">
-        <p class = "footer_note">© 2026 Osama · HTML, CSS &amp; JS で作成</p>
-        <ul class = "bottom__bar__list">
-          <li class = "bottom_bar_list_item"><a href = "mailto:abdalghanyosama@gmail.com"><i class = "fa fa-envelope"></i> メール</a></li>
-          <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details"><i class = "fa fa-linkedin"></i> Linkedin</a></li>
-          <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://github.com/Osama-alt-del"><i class = "fa fa-github"></i> GitHub</a></li>
-        </ul>
+      <div class = "footer_hills" aria-hidden = "true">
+        <div class = "footer_walker"><img src="../images/kirby.svg" alt=""></div>
+      </div>
+      <div class = "footer_ground">
+        <div class = "bottom__bar__inner">
+          <p class = "footer_note">© 2026 Osama · HTML, CSS &amp; JS で手作り</p>
+          <ul class = "bottom__bar__list">
+            <li class = "bottom_bar_list_item"><a href = "mailto:abdalghanyosama@gmail.com"><i class = "fa fa-envelope"></i> メール</a></li>
+            <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details"><i class = "fa fa-linkedin"></i> Linkedin</a></li>
+            <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://github.com/Osama-alt-del"><i class = "fa fa-github"></i> GitHub</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
   </body>

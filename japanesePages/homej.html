@@ -4,16 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Osama Abd-Alghany : ポートフォリオ</title>
+    <script>document.documentElement.classList.add("js");</script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Ma+Shan+Zheng&family=Yuji+Syuku&text=%D8%A7%D9%84%D8%B9%D8%B1%D8%A8%D9%8A%D8%A9%E6%97%A5%E6%9C%AC%E8%AA%9E%E4%B8%AD%E6%96%87&display=swap" rel="stylesheet">
     <link href="../styles.css" rel="stylesheet">
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../images/kirby.svg">
+    <script src="../script.js" defer></script>
   </head>
   <body>
     <header class = "navbar">
       <nav class = "navbar__inner">
-        <a class = "brand" href="./homej.html"><span class = "brand_mark">&lt;/&gt;</span>Osama</a>
+        <a class = "brand" href="./homej.html"><img class = "brand_kirby" src="../images/kirby.svg" alt="">Osama</a>
         <input type = "checkbox" id = "nav-toggle" class = "nav_toggle">
         <label for = "nav-toggle" class = "nav_burger" aria-label = "メニュー"><i class = "fa fa-bars"></i></label>
         <ul class = "navbar__container">
@@ -32,21 +36,43 @@
       </nav>
     </header>
 
-    <main class = "container">
-      <section class = "hero">
-        <p class = "hero_eyebrow fadeFirst">Hello, world</p>
-        <h1 class = "titleMessage fadeFirst">こんにちは、<span class = "gradient_text">オサマ</span>と申します！</h1>
-        <p class = "coverMessage fadeFirst">色んな言語を学ぶのに熱心があるソフトウェア工学の大学生</p>
-        <div class = "hero_actions fadeSecond">
-          <a class = "btn btn_primary" href="./projectsj.html">プロジェクトを見る <i class = "fa fa-arrow-right"></i></a>
-          <a class = "btn btn_ghost" href="./cvj.html"><i class = "fa fa-file-text-o"></i> 履歴書</a>
+    <section class = "hero">
+        <div class = "sky" aria-hidden = "true">
+          <img class = "cloud cloud_1" src="../images/cloud.svg" alt="">
+          <img class = "cloud cloud_2" src="../images/cloud.svg" alt="">
+          <img class = "cloud cloud_3" src="../images/cloud.svg" alt="">
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "warp_star"></span>
         </div>
-      </section>
+      <div class = "container hero_inner">
+        <div class = "hero_text">
+          <p class = "hero_eyebrow">ようこそ、プププランドへ</p>
+          <h1 class = "titleMessage bouncy">こんにちは、<span class = "name_highlight">オサマ</span>と申します！</h1>
+          <p class = "coverMessage">色んな言語を学ぶのに熱心があるソフトウェア工学の大学生</p>
+          <div class = "hero_actions">
+            <a class = "btn btn_primary" href="./projectsj.html">プロジェクトを見る <i class = "fa fa-arrow-right"></i></a>
+            <a class = "btn btn_ghost" href="./cvj.html"><i class = "fa fa-file-text-o"></i> 履歴書</a>
+          </div>
+        </div>
+        <div class = "hero_kirby">
+          <div class = "orbit" aria-hidden = "true"><span></span><span></span><span></span></div>
+          <span class = "kirby_shadow" aria-hidden = "true"></span>
+          <button class = "kirby_btn" type = "button" aria-label = "クリックしてみて"><img src="../images/kirby.svg" alt=""></button>
+          <span class = "poyo_bubble" aria-hidden = "true">ポヨ！</span>
+        </div>
+      </div>
+    </section>
 
-      <section class = "SoftwareSkills skills_section fadeSecond">
-        <h2 class = "skillHeading">ソフトウェア能力</h2>
-        <p class = "skillSub">言語・フレームワーク</p>
-        <div class = "programming_lang_div skills_grid">
+    <main class = "container home_main">
+      <section class = "SoftwareSkills skills_section">
+        <h2 class = "skillHeading reveal">ソフトウェア能力</h2>
+        <p class = "skillSub reveal">言語・フレームワーク</p>
+        <div class = "programming_lang_div skills_grid stagger">
           <div class="skill_card">
             <img src="../images/PythonLogo.png" alt="Python">
             <span class = "skill_name">Python</span>
@@ -78,8 +104,8 @@
             <div class="skill_bar"><div class="skill_level" style="width: 40%; background-color: #F7DF1E;"></div></div>
           </div>
         </div>
-        <p class = "skillSub">ツール・プラットフォーム</p>
-        <div class = "IDE_div skills_grid">
+        <p class = "skillSub reveal">ツール・プラットフォーム</p>
+        <div class = "IDE_div skills_grid stagger">
           <div class="skill_card">
             <img src="../images/nvim-logo.png" alt="nvim">
             <span class = "skill_name">Neovim</span>
@@ -103,31 +129,41 @@
         </div>
       </section>
 
-      <section class = "LanguageSkills skills_section fadeThird">
-        <h2 class = "skillHeading">言語能力</h2>
-        <div class = "languages_div skills_grid">
+      <section class = "LanguageSkills skills_section">
+        <h2 class = "skillHeading reveal">言語能力</h2>
+        <div class = "languages_div skills_grid stagger">
           <div class="skill_card">
-            <img src="../images/Arabic.png" alt="Arabic">
+            <span class = "lang_glyph lang_ar" lang = "ar" dir = "rtl">العربية</span>
             <span class = "skill_name">アラビア語</span>
-            <div class="skill_bar"><div class="skill_level" style="width: 70%; background: linear-gradient(90deg, #2a9d8f, #5468f0);"></div></div>
+            <div class="skill_bar"><div class="skill_level" style="width: 70%; background-color: #6CC56A;"></div></div>
           </div>
           <div class="skill_card">
-            <img src="../images/Japanese.png" alt="Japanese">
+            <span class = "lang_glyph lang_ja" lang = "ja">日本語</span>
             <span class = "skill_name">日本語</span>
-            <div class="skill_bar"><div class="skill_level" style="width: 75%; background: linear-gradient(90deg, #2a9d8f, #5468f0);"></div></div>
+            <div class="skill_bar"><div class="skill_level" style="width: 75%; background-color: #FF6FA5;"></div></div>
+          </div>
+          <div class="skill_card">
+            <span class = "lang_glyph lang_zh" lang = "zh">中文</span>
+            <span class = "skill_name">中国語 <span class = "skill_tag">初級</span></span>
+            <div class="skill_bar"><div class="skill_level" style="width: 20%; background-color: #FFC93C;"></div></div>
           </div>
         </div>
       </section>
     </main>
 
     <footer class = "bottom__bar">
-      <div class = "bottom__bar__inner">
-        <p class = "footer_note">© 2026 Osama · HTML, CSS &amp; JS で作成</p>
-        <ul class = "bottom__bar__list">
-          <li class = "bottom_bar_list_item"><a href = "mailto:abdalghanyosama@gmail.com"><i class = "fa fa-envelope"></i> メール</a></li>
-          <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details"><i class = "fa fa-linkedin"></i> Linkedin</a></li>
-          <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://github.com/Osama-alt-del"><i class = "fa fa-github"></i> GitHub</a></li>
-        </ul>
+      <div class = "footer_hills" aria-hidden = "true">
+        <div class = "footer_walker"><img src="../images/kirby.svg" alt=""></div>
+      </div>
+      <div class = "footer_ground">
+        <div class = "bottom__bar__inner">
+          <p class = "footer_note">© 2026 Osama · HTML, CSS &amp; JS で手作り</p>
+          <ul class = "bottom__bar__list">
+            <li class = "bottom_bar_list_item"><a href = "mailto:abdalghanyosama@gmail.com"><i class = "fa fa-envelope"></i> メール</a></li>
+            <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details"><i class = "fa fa-linkedin"></i> Linkedin</a></li>
+            <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://github.com/Osama-alt-del"><i class = "fa fa-github"></i> GitHub</a></li>
+          </ul>
+        </div>
       </div>
     </footer>
   </body>
