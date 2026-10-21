@@ -1457,6 +1457,513 @@ html[lang="ja"] .stage_tag {
 }
 
 /* ==========================================================================
+   Experience: level select map
+   ========================================================================== */
+
+.level_section {
+  padding-top: clamp(28px, 4vw, 44px);
+  padding-bottom: clamp(48px, 7vw, 80px);
+}
+
+.map_frame {
+  position: relative;
+  aspect-ratio: 2 / 1;
+  overflow: hidden;
+  background: #8fcff7;
+  border: var(--line);
+  border-radius: 30px;
+  box-shadow: 0 8px 0 var(--pink-shadow);
+}
+
+/* Everything inside is sized in cqw so the map scales as one picture */
+.map_world {
+  --minf: 4px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  container-type: inline-size;
+  transform-origin: 0 0;
+  transition: transform 1.4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.map_world.no-transition {
+  transition: none;
+}
+
+.map_art {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.path_cleared {
+  animation: dashMove 1.2s linear infinite;
+}
+
+.map_cloud {
+  position: absolute;
+  left: var(--cx);
+  top: var(--cy);
+  z-index: 4;
+  width: var(--w);
+  filter: drop-shadow(0 0.5cqw 0 rgba(120, 190, 240, 0.45));
+  animation: sway 11s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+.map_cloud_mist {
+  opacity: 0.9;
+  animation-duration: 8s;
+}
+
+/* Stages */
+.level {
+  --door: 7cqw;
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.7cqw;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--ink);
+  font: inherit;
+  cursor: pointer;
+  transform: translate(-50%, calc(var(--door) / -2));
+  -webkit-tap-highlight-color: transparent;
+}
+
+.level_door_wrap {
+  position: relative;
+}
+
+.level_door {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: var(--door);
+  height: var(--door);
+  overflow: hidden;
+  background: var(--paper);
+  border: 0.35cqw solid var(--ink);
+  border-radius: 50%;
+  box-shadow: 0 0.45cqw 0 var(--ink);
+  transition: transform 0.4s var(--bounce);
+}
+
+.level_door img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.level:hover .level_door,
+.level:focus-visible .level_door {
+  transform: translateY(-0.4cqw) scale(1.06);
+}
+
+.level.is-selected .level_door {
+  transform: scale(1.1);
+}
+
+.level_badge {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  background: #d7262f;
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 1.3cqw;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.level_mystery {
+  font-family: var(--font-display);
+  font-size: 3.4cqw;
+  font-weight: 700;
+  color: var(--ink-soft);
+}
+
+.level.is-locked .level_door {
+  background: #e7e1f1;
+  border-style: dashed;
+}
+
+.level_lock {
+  position: absolute;
+  right: 18%;
+  bottom: 14%;
+  font-size: 1.2cqw;
+  color: var(--ink-soft);
+}
+
+.level_ring {
+  position: absolute;
+  inset: -1cqw;
+  border: 0.35cqw solid var(--paper);
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.level.is-selected .level_ring {
+  animation: ringPulse 1.6s ease-out infinite;
+}
+
+.level_flag {
+  position: absolute;
+  top: -1.2cqw;
+  right: -3.2cqw;
+  padding: 0.1cqw 0.8cqw;
+  border: 0.22cqw solid var(--ink);
+  border-radius: 999px;
+  box-shadow: 0 0.22cqw 0 var(--ink);
+  font-family: var(--font-display);
+  font-size: max(0.85cqw, var(--minf));
+  font-weight: 700;
+  white-space: nowrap;
+  transform: rotate(12deg);
+}
+
+.level_flag_cleared {
+  background: var(--yellow);
+}
+
+.level_flag_current {
+  background: var(--pink);
+  animation: flagBob 1.2s ease-in-out infinite;
+}
+
+.level_label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.35cqw 1.1cqw 0.45cqw;
+  background: var(--paper);
+  border: 0.25cqw solid var(--ink);
+  border-radius: 1.2cqw;
+  box-shadow: 0 0.3cqw 0 var(--ink);
+  line-height: 1.3;
+  white-space: nowrap;
+  transition: background-color 0.3s;
+}
+
+.level.is-selected .level_label {
+  background: var(--yellow);
+}
+
+.level.is-locked .level_label {
+  opacity: 0.8;
+}
+
+.level_stage {
+  font-family: var(--font-display);
+  font-size: max(0.75cqw, var(--minf));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+}
+
+.level_name {
+  font-family: var(--font-display);
+  font-size: max(1.15cqw, var(--minf));
+  font-weight: 700;
+}
+
+.level_dates {
+  font-size: max(0.85cqw, var(--minf));
+  font-weight: 800;
+  color: var(--ink-soft);
+}
+
+.level.is-shaking .level_door_wrap {
+  animation: shake 0.5s ease;
+}
+
+/* Kirby walks between stages */
+.map_kirby {
+  position: absolute;
+  left: var(--kx, 50%);
+  top: var(--ky, 50%);
+  z-index: 3;
+  width: 5cqw;
+  transform: translate(-50%, calc(-100% - 3.3cqw));
+  transition: left 1s ease-in-out, top 1s ease-in-out;
+  pointer-events: none;
+}
+
+.map_kirby img {
+  display: block;
+  width: 100%;
+  animation: float 2.4s ease-in-out infinite;
+}
+
+.map_kirby.is-walking img {
+  animation: waddle 0.25s ease-in-out 4 alternate;
+}
+
+/* Map controls */
+.map_expand,
+.map_arrow {
+  position: absolute;
+  z-index: 5;
+  border: var(--line-thin);
+  box-shadow: 0 4px 0 var(--ink);
+  color: var(--ink);
+  font-family: var(--font-display);
+  cursor: pointer;
+  transition: transform 0.25s var(--bounce), box-shadow 0.25s var(--bounce), background-color 0.2s;
+}
+
+.map_expand {
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  background: var(--paper);
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.map_arrow {
+  bottom: 14px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--yellow);
+  font-size: 16px;
+}
+
+.map_prev {
+  left: 14px;
+}
+
+.map_next {
+  right: 14px;
+}
+
+.map_expand:hover,
+.map_arrow:hover {
+  background: var(--pink);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--ink);
+}
+
+.map_expand:active,
+.map_arrow:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.map_hint {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 5;
+  margin: 0;
+  padding: 3px 14px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 2px solid var(--ink);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+/* Details for the selected stage */
+.stage_panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 30px;
+  padding: clamp(20px, 3vw, 32px);
+  background: var(--paper);
+  border: var(--line);
+  border-radius: 28px;
+  box-shadow: 0 8px 0 var(--pink-shadow);
+}
+
+.stage_panel.is-changing {
+  animation: popUp 0.5s var(--bounce);
+}
+
+.stage_panel_badge {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 96px;
+  height: 96px;
+  overflow: hidden;
+  background: var(--paper);
+  border: var(--line);
+  border-radius: 50%;
+  box-shadow: 0 4px 0 var(--ink);
+}
+
+.stage_panel_badge img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.stage_panel_badge .level_badge {
+  font-size: 19px;
+}
+
+.stage_panel_badge .level_mystery {
+  font-size: 44px;
+}
+
+.stage_panel_stage {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--pink-deep);
+}
+
+.stage_panel_name {
+  margin: 2px 0 4px;
+  font-size: clamp(24px, 3vw, 32px);
+}
+
+.stage_panel_role {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.stage_panel_dates {
+  display: inline-block;
+  margin: 10px 0 14px;
+  padding: 2px 14px;
+  background: var(--yellow);
+  border: var(--line-thin);
+  border-radius: 999px;
+  box-shadow: 0 3px 0 var(--ink);
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.stage_panel_points {
+  margin: 0;
+  padding-left: 20px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+
+.stage_panel_points li + li {
+  margin-top: 6px;
+}
+
+/* Full map dialog */
+.map_modal {
+  width: min(96vw, 1400px);
+  max-width: none;
+  max-height: 94vh;
+  padding: 0;
+  overflow: auto;
+  background: var(--cream);
+  border: var(--line);
+  border-radius: 28px;
+  box-shadow: 0 10px 0 var(--pink-shadow);
+  color: var(--ink);
+}
+
+.map_modal[open] {
+  animation: popUp 0.45s var(--bounce);
+}
+
+.map_modal::backdrop {
+  background: rgba(59, 42, 92, 0.55);
+  backdrop-filter: blur(4px);
+}
+
+.map_modal_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px 20px;
+  border-bottom: 3px dashed var(--pink-shadow);
+}
+
+.map_modal_head h2 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 24px;
+}
+
+.map_modal_head h2::before {
+  content: "";
+  width: 26px;
+  height: 26px;
+  background: url("images/star.svg") center / contain no-repeat;
+}
+
+.map_modal_close {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  background: var(--pink);
+  border: var(--line-thin);
+  border-radius: 50%;
+  box-shadow: 0 3px 0 var(--ink);
+  color: var(--ink);
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s var(--bounce);
+}
+
+.map_modal_close:hover {
+  transform: rotate(90deg);
+}
+
+.map_modal_body {
+  padding: 18px;
+}
+
+.map_full_frame {
+  position: relative;
+  width: min(100%, calc((94vh - 130px) * 2));
+  aspect-ratio: 2 / 1;
+  margin: 0 auto;
+  overflow: hidden;
+  background: #8fcff7;
+  border: var(--line);
+  border-radius: 20px;
+}
+
+.map_full_frame .map_world {
+  --minf: 10px;
+  transform: none;
+  transition: none;
+}
+
+/* ==========================================================================
    Footer (Green Greens)
    ========================================================================== */
 
@@ -1892,6 +2399,52 @@ html[lang="ja"] .stage_tag {
   }
 }
 
+@keyframes dashMove {
+  to {
+    stroke-dashoffset: -3.41;
+  }
+}
+
+@keyframes ringPulse {
+  0% {
+    opacity: 1;
+    transform: scale(0.9);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes flagBob {
+  0%,
+  100% {
+    transform: rotate(12deg) translateY(0);
+  }
+
+  50% {
+    transform: rotate(6deg) translateY(-0.4cqw);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  20%,
+  60% {
+    transform: translateX(-0.8cqw) rotate(-4deg);
+  }
+
+  40%,
+  80% {
+    transform: translateX(0.8cqw) rotate(4deg);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -2130,6 +2683,26 @@ html[lang="ja"] .stage_tag {
   .bottom__bar__inner {
     flex-direction: column-reverse;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .map_frame {
+    aspect-ratio: 4 / 5;
+  }
+
+  .map_hint {
+    display: none;
+  }
+
+  .stage_panel {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .stage_panel_points {
+    text-align: left;
   }
 }
 

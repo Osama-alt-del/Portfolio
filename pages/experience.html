@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Experience · Osama</title>
+    <script>
+      document.documentElement.classList.add("js");
+      if (new URLSearchParams(location.search).get("lang") === "ja") document.documentElement.lang = "ja";
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="icon" href="../images/kirby.svg">
+    <script src="../experience.js" defer></script>
+    <script src="../script.js" defer></script>
+  </head>
+  <body>
+    <header class = "navbar">
+      <nav class = "navbar__inner">
+        <a class = "brand" href="./home.html" data-en-href="./home.html" data-ja-href="../japanesePages/homej.html"><img class = "brand_kirby" src="../images/kirby.svg" alt="">Osama</a>
+        <input type = "checkbox" id = "nav-toggle" class = "nav_toggle">
+        <label for = "nav-toggle" class = "nav_burger" aria-label = "Toggle menu"><i class = "fa fa-bars"></i></label>
+        <ul class = "navbar__container">
+          <li class = "navbar__item"><a href="./home.html" data-en-href="./home.html" data-ja-href="../japanesePages/homej.html" data-en="Home" data-ja="ホーム">Home</a></li>
+          <li class = "navbar__item"><a href="./projects.html" data-en-href="./projects.html" data-ja-href="../japanesePages/projectsj.html" data-en="Projects" data-ja="プロジェクト">Projects</a></li>
+          <li class = "navbar__item active_navitem"><a href="./experience.html" data-en-href="./experience.html" data-ja-href="./experience.html?lang=ja" data-en="Experience" data-ja="職歴">Experience</a></li>
+          <li class = "navbar__item"><a href="./blog.html" data-en-href="./blog.html" data-ja-href="../japanesePages/blogj.html" data-en="Blog" data-ja="ブログ">Blog</a></li>
+          <li class = "navbar__item"><a href="./cv.html" data-en-href="./cv.html" data-ja-href="../japanesePages/cvj.html" data-en="CV" data-ja="履歴書">CV</a></li>
+          <li class = "navbar__item dropdown">
+            <button class = "dropdownbtn" type = "button"><i class = "fa fa-globe"></i> <span data-en="Languages" data-ja="言語">Languages</span> <i class = "fa fa-caret-down"></i></button>
+            <div class = "dropdown-content">
+              <a href="./experience.html">English</a>
+              <a href="./experience.html?lang=ja">日本語</a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+      <section class = "page_hero">
+        <div class = "sky" aria-hidden = "true">
+          <img class = "cloud cloud_1" src="../images/cloud.svg" alt="">
+          <img class = "cloud cloud_2" src="../images/cloud.svg" alt="">
+          <img class = "cloud cloud_3" src="../images/cloud.svg" alt="">
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "twinkle"></span>
+          <span class = "warp_star"></span>
+        </div>
+        <div class = "container page_hero_inner">
+          <div class = "page_hero_text">
+            <h1 class = "page_title bouncy"><span data-en="Work Experience" data-ja="職歴">Work Experience</span></h1>
+            <p class = "page_sub"><span data-en="Every job is a new stage. Pick one to take a look!" data-ja="仕事はひとつひとつが新しいステージ。選んでみてください！">Every job is a new stage. Pick one to take a look!</span></p>
+          </div>
+          <div class = "page_hero_kirby" aria-hidden = "true">
+            <img class = "sitting" src="../images/kirby.svg" alt="">
+            <img class = "seat" src="../images/cloud.svg" alt="">
+          </div>
+        </div>
+      </section>
+
+    <main class = "container level_section">
+      <div class = "map_frame reveal">
+        <div class = "map_world">
+          <svg class = "map_art" viewBox = "0 0 200 100" aria-hidden = "true">
+            <defs>
+              <linearGradient id = "map-sea" x1 = "0" y1 = "0" x2 = "0" y2 = "1">
+                <stop offset = "0" stop-color = "#a8dcff"/>
+                <stop offset = "1" stop-color = "#74c4f4"/>
+              </linearGradient>
+            </defs>
+            <rect width = "200" height = "100" fill = "url(#map-sea)"/>
+            <g fill = "none" stroke = "#fff" stroke-width = "0.6" stroke-linecap = "round" opacity = "0.75">
+              <path d = "M8 18 q2 -1.5 4 0 t4 0"/>
+              <path d = "M64 14 q2 -1.5 4 0 t4 0"/>
+              <path d = "M150 74 q2 -1.5 4 0 t4 0"/>
+              <path d = "M20 90 q2 -1.5 4 0 t4 0"/>
+              <path d = "M92 86 q2 -1.5 4 0 t4 0"/>
+              <path d = "M182 62 q2 -1.5 4 0 t4 0"/>
+              <path d = "M128 12 q2 -1.5 4 0 t4 0"/>
+              <path d = "M76 30 q2 -1.5 4 0 t4 0"/>
+            </g>
+            <g stroke = "#3B2A5C" stroke-width = "0.7" stroke-linejoin = "round">
+              <path transform = "translate(0 2.5)" fill = "#FFE3A3" d = "M18 60 C17 48 31 41 46 42 C61 42 73 48 72 59 C70 69 56 74 43 73 C29 72 19 69 18 60 Z"/>
+              <path fill = "#A6E39A" d = "M18 60 C17 48 31 41 46 42 C61 42 73 48 72 59 C70 69 56 74 43 73 C29 72 19 69 18 60 Z"/>
+              <path transform = "translate(0 2.5)" fill = "#FFE3A3" d = "M86 48 C84 34 101 27 118 28 C137 29 149 38 147 50 C145 61 130 67 114 66 C97 65 88 59 86 48 Z"/>
+              <path fill = "#A6E39A" d = "M86 48 C84 34 101 27 118 28 C137 29 149 38 147 50 C145 61 130 67 114 66 C97 65 88 59 86 48 Z"/>
+              <path transform = "translate(0 2.5)" fill = "#EFE3C8" d = "M157 34 C157 26 166 22 176 23 C186 24 190 30 188 36 C186 42 176 44 168 43 C160 42 157 40 157 34 Z"/>
+              <path fill = "#C9E3C2" d = "M157 34 C157 26 166 22 176 23 C186 24 190 30 188 36 C186 42 176 44 168 43 C160 42 157 40 157 34 Z"/>
+            </g>
+            <g stroke = "#3B2A5C" stroke-width = "0.5">
+              <g transform = "translate(25 53)"><rect x = "-0.5" y = "-1" width = "1" height = "3" fill = "#8A5A3C"/><circle cy = "-2.4" r = "2.6" fill = "#6CC56A"/></g>
+              <g transform = "translate(66 53)"><rect x = "-0.5" y = "-1" width = "1" height = "3" fill = "#8A5A3C"/><circle cy = "-2.4" r = "2.2" fill = "#6CC56A"/></g>
+              <g transform = "translate(92 51)"><rect x = "-0.5" y = "-1" width = "1" height = "3" fill = "#8A5A3C"/><circle cy = "-2.4" r = "2.6" fill = "#6CC56A"/></g>
+              <g transform = "translate(140 47)"><rect x = "-0.5" y = "-1" width = "1" height = "3" fill = "#8A5A3C"/><circle cy = "-2.4" r = "2.4" fill = "#6CC56A"/></g>
+              <g transform = "translate(131 34)"><rect x = "-0.5" y = "-1" width = "1" height = "3" fill = "#8A5A3C"/><circle cy = "-2.4" r = "2" fill = "#6CC56A"/></g>
+            </g>
+            <g fill = "none" stroke-linecap = "round">
+              <path d = "M44 58 C64 40 92 64 116 46" stroke = "#3B2A5C" stroke-width = "2.6" stroke-dasharray = "0.01 3.4"/>
+              <path class = "path_cleared" d = "M44 58 C64 40 92 64 116 46" stroke = "#fff" stroke-width = "1.6" stroke-dasharray = "0.01 3.4"/>
+              <path d = "M116 46 C134 34 150 44 172 32" stroke = "#3B2A5C" stroke-width = "1.8" stroke-dasharray = "0.01 3.4" opacity = "0.45"/>
+              <path d = "M116 46 C134 34 150 44 172 32" stroke = "#fff" stroke-width = "1" stroke-dasharray = "0.01 3.4" opacity = "0.7"/>
+            </g>
+          </svg>
+          <img class = "map_cloud" style = "--cx: 3%; --cy: 6%; --w: 13cqw" src="../images/cloud.svg" alt="">
+          <img class = "map_cloud" style = "--cx: 34%; --cy: 74%; --w: 9cqw" src="../images/cloud.svg" alt="">
+          <img class = "map_cloud map_cloud_mist" style = "--cx: 77%; --cy: 12%; --w: 11cqw" src="../images/cloud.svg" alt="">
+          <img class = "map_cloud map_cloud_mist" style = "--cx: 90%; --cy: 13%; --w: 8cqw" src="../images/cloud.svg" alt="">
+          <div class = "map_kirby" aria-hidden = "true"><img src="../images/kirby.svg" alt=""></div>
+        </div>
+        <button class = "map_expand" type = "button"><i class = "fa fa-expand"></i> <span data-en="Full map" data-ja="全体マップ">Full map</span></button>
+        <button class = "map_arrow map_prev" type = "button" aria-label = "Previous stage"><i class = "fa fa-chevron-left"></i></button>
+        <button class = "map_arrow map_next" type = "button" aria-label = "Next stage"><i class = "fa fa-chevron-right"></i></button>
+        <p class = "map_hint" data-en="Click a stage or use ← →" data-ja="ステージをクリック、または ← → キー">Click a stage or use ← →</p>
+      </div>
+
+      <section class = "stage_panel" aria-live = "polite">
+        <div class = "stage_panel_badge"></div>
+        <div class = "stage_panel_body">
+          <span class = "stage_panel_stage"></span>
+          <h2 class = "stage_panel_name"></h2>
+          <p class = "stage_panel_role"></p>
+          <p class = "stage_panel_dates"></p>
+          <ul class = "stage_panel_points"></ul>
+        </div>
+      </section>
+    </main>
+
+    <dialog class = "map_modal" aria-labelledby = "map-modal-title">
+      <div class = "map_modal_head">
+        <h2 id = "map-modal-title"><span data-en="World map" data-ja="ワールドマップ">World map</span></h2>
+        <button class = "map_modal_close" type = "button" aria-label = "Close"><i class = "fa fa-times"></i></button>
+      </div>
+      <div class = "map_modal_body">
+        <div class = "map_full_frame"></div>
+      </div>
+    </dialog>
+
+    <footer class = "bottom__bar">
+      <div class = "footer_hills" aria-hidden = "true">
+        <div class = "footer_walker"><img src="../images/kirby.svg" alt=""></div>
+      </div>
+      <div class = "footer_ground">
+        <div class = "bottom__bar__inner">
+          <p class = "footer_note" data-en="© 2026 Osama · Hand-built with HTML, CSS &amp; JS" data-ja="© 2026 Osama · HTML, CSS &amp; JS で手作り">© 2026 Osama · Hand-built with HTML, CSS &amp; JS</p>
+          <ul class = "bottom__bar__list">
+            <li class = "bottom_bar_list_item"><a href = "mailto:abdalghanyosama@gmail.com"><i class = "fa fa-envelope"></i> <span data-en="Email" data-ja="メール">Email</span></a></li>
+            <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://www.linkedin.com/in/osama-zaid-a08877235/?trk=opento_sprofile_details"><i class = "fa fa-linkedin"></i> Linkedin</a></li>
+            <li class = "bottom_bar_list_item"><a target = "_blank" rel = "noopener" href="https://github.com/Osama-alt-del"><i class = "fa fa-github"></i> GitHub</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
