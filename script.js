@@ -1,54 +1,18 @@
 function openProjects(i) {
-  const projectCard = i.parentElement.parentElement;
-  if (projectCard.offsetHeight == 165) {
-    projectCard.style.animation = "openProjects 1.5s forwards";
-    getSmaller(projectCard);
-  } else if (projectCard.offsetHeight == 500) {
-    projectCard.style.animation = "closeProjects 1.5s forwards";
-    getSmaller(projectCard);
-  }
-}
+  const projectCard = i.closest(".project_card");
+  projectCard.classList.toggle("open");
 
-function getSmaller(projectCard) {
-  // I'm trying to make the content appear as a block using animations?
-  const childImgs = projectCard.querySelectorAll("img");
-  const childh1 = projectCard.querySelector("h1");
-  const childi = projectCard.querySelector("i");
-
-  // This doesn't work, the animation doesn't actually make it fade in
-  const content = projectCard.querySelector("div.projectContent");
-  if (childImgs.length > 1) {
-    childImgs.forEach((img) => {
-      if (img.offsetHeight == 100) {
-        img.style.animation = "getSmaller 1.5s forwards";
-        childh1.style.animation = "getSmallerTitle 1.5s forwards";
-        childi.style.animation = "getSmallerArrow 1.5s forwards";
-        content.style.animation = "showContent 1.5s forwards";
-      } else if (img.offsetHeight == 50) {
-        img.style.animation = "getLarger 1.5s forwards";
-        childh1.style.animation = "getLargerTitle 1.5s forwards";
-        childi.style.animation = "getLargerArrow 1.5s forwards";
-        content.style.animation = "hideContent 1.5s forwards";
-      }
-    });
-  } else {
-    childImg = childImgs[0];
-    if (childImg.offsetHeight == 100) {
-      childImg.style.animation = "getSmaller 1.5s forwards";
-      childh1.style.animation = "getSmallerTitle 1.5s forwards";
-      childi.style.animation = "getSmallerArrow 1.5s forwards";
-      content.style.animation = "showContent 1.5s forwards";
-    } else if (childImg.offsetHeight == 50) {
-      childImg.style.animation = "getLarger 1.5s forwards";
-      childh1.style.animation = "getLargerTitle 1.5s forwards";
-      childi.style.animation = "getLargerArrow 1.5s forwards";
-      content.style.animation = "hideContent 1.5s forwards";
-    }
+  // Show the first project straight away instead of an empty panel
+  const overview = projectCard.querySelector(".projectOverview");
+  const firstItem = projectCard.querySelector(".projectItem");
+  if (projectCard.classList.contains("open") && firstItem &&
+      overview.querySelector(".overview_placeholder")) {
+    firstItem.click();
   }
 }
 
 function displayContentPython(item) {
-  items = document.querySelectorAll(".projectItem");
+  items = item.closest(".projectList").querySelectorAll(".projectItem");
   projectView = item.parentElement.parentElement.parentElement.querySelector(
     ".projectOverview",
   );
@@ -107,11 +71,11 @@ function displayContentPython(item) {
   projectView.style.animation = "none";
   projectView.offsetHeight;
   projectView.style.opacity = "0";
-  projectView.style.animation = "fadeIn 1.5s forwards";
+  projectView.style.animation = "fadeIn 0.5s forwards";
 }
 
 function displayContentCpp(item) {
-  items = document.querySelectorAll(".projectItem");
+  items = item.closest(".projectList").querySelectorAll(".projectItem");
   projectView = item.parentElement.parentElement.parentElement.querySelector(
     ".projectOverview",
   );
@@ -136,11 +100,11 @@ function displayContentCpp(item) {
   projectView.style.animation = "none";
   projectView.offsetHeight;
   projectView.style.opacity = "0";
-  projectView.style.animation = "fadeIn 1.5s forwards";
+  projectView.style.animation = "fadeIn 0.5s forwards";
 }
 
 function displayContentFlutter(item) {
-  items = document.querySelectorAll(".projectItem");
+  items = item.closest(".projectList").querySelectorAll(".projectItem");
   projectView = item.parentElement.parentElement.parentElement.querySelector(
     ".projectOverview",
   );
@@ -165,11 +129,11 @@ function displayContentFlutter(item) {
   projectView.style.animation = "none";
   projectView.offsetHeight;
   projectView.style.opacity = "0";
-  projectView.style.animation = "fadeIn 1.5s forwards";
+  projectView.style.animation = "fadeIn 0.5s forwards";
 }
 
 function displayContentWeb(item) {
-  items = document.querySelectorAll(".projectItem");
+  items = item.closest(".projectList").querySelectorAll(".projectItem");
   projectView = item.parentElement.parentElement.parentElement.querySelector(
     ".projectOverview",
   );
@@ -212,11 +176,11 @@ function displayContentWeb(item) {
   projectView.style.animation = "none";
   projectView.offsetHeight;
   projectView.style.opacity = "0";
-  projectView.style.animation = "fadeIn 1.5s forwards";
+  projectView.style.animation = "fadeIn 0.5s forwards";
 }
 
 function displayContentPythonj(item) {
-  items = document.querySelectorAll(".projectItem");
+  items = item.closest(".projectList").querySelectorAll(".projectItem");
   projectView = item.parentElement.parentElement.parentElement.querySelector(
     ".projectOverview",
   );
@@ -275,11 +239,11 @@ function displayContentPythonj(item) {
   projectView.style.animation = "none";
   projectView.offsetHeight;
   projectView.style.opacity = "0";
-  projectView.style.animation = "fadeIn 1.5s forwards";
+  projectView.style.animation = "fadeIn 0.5s forwards";
 }
 
 function displayContentCppj(item) {
-  items = document.querySelectorAll(".projectItem");
+  items = item.closest(".projectList").querySelectorAll(".projectItem");
   projectView = item.parentElement.parentElement.parentElement.querySelector(
     ".projectOverview",
   );
@@ -304,11 +268,11 @@ function displayContentCppj(item) {
   projectView.style.animation = "none";
   projectView.offsetHeight;
   projectView.style.opacity = "0";
-  projectView.style.animation = "fadeIn 1.5s forwards";
+  projectView.style.animation = "fadeIn 0.5s forwards";
 }
 
 function displayContentFlutterj(item) {
-  items = document.querySelectorAll(".projectItem");
+  items = item.closest(".projectList").querySelectorAll(".projectItem");
   projectView = item.parentElement.parentElement.parentElement.querySelector(
     ".projectOverview",
   );
@@ -333,11 +297,11 @@ function displayContentFlutterj(item) {
   projectView.style.animation = "none";
   projectView.offsetHeight;
   projectView.style.opacity = "0";
-  projectView.style.animation = "fadeIn 1.5s forwards";
+  projectView.style.animation = "fadeIn 0.5s forwards";
 }
 
 function displayContentWebj(item) {
-  items = document.querySelectorAll(".projectItem");
+  items = item.closest(".projectList").querySelectorAll(".projectItem");
   projectView = item.parentElement.parentElement.parentElement.querySelector(
     ".projectOverview",
   );
@@ -362,5 +326,5 @@ function displayContentWebj(item) {
   projectView.style.animation = "none";
   projectView.offsetHeight;
   projectView.style.opacity = "0";
-  projectView.style.animation = "fadeIn 1.5s forwards";
+  projectView.style.animation = "fadeIn 0.5s forwards";
 }
