@@ -691,6 +691,87 @@ html[lang="ja"] .stage_tag {
   animation: sparkleFade 0.8s ease-out forwards;
 }
 
+/* Background music toggle (added by script.js) */
+.music_toggle {
+  position: fixed;
+  right: clamp(14px, 3vw, 28px);
+  bottom: clamp(14px, 3vw, 28px);
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: var(--line);
+  border-radius: 50%;
+  background: var(--yellow);
+  box-shadow: 0 5px 0 var(--ink);
+  color: var(--ink);
+  font-size: 22px;
+  cursor: pointer;
+  transition: transform 0.3s var(--bounce), box-shadow 0.3s var(--bounce), background-color 0.2s;
+}
+
+.music_toggle:hover {
+  transform: translateY(-3px) rotate(-8deg);
+  box-shadow: 0 8px 0 var(--ink);
+}
+
+.music_toggle:active {
+  transform: translateY(4px);
+  box-shadow: 0 1px 0 var(--ink);
+}
+
+.music_toggle .fa {
+  opacity: 0.55;
+}
+
+/* Strike-through while muted */
+.music_toggle::after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--ink);
+  transform: rotate(-45deg);
+  transition: transform 0.3s var(--bounce);
+}
+
+.music_toggle.is-playing {
+  background: var(--pink);
+}
+
+.music_toggle.is-playing .fa {
+  opacity: 1;
+  animation: musicBob 0.4s ease-in-out infinite alternate;
+}
+
+.music_toggle.is-playing::after {
+  transform: rotate(-45deg) scaleX(0);
+}
+
+.music_notes span {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--pink-deep);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.music_toggle.is-playing .music_notes span {
+  animation: noteRise 1.8s ease-out infinite;
+}
+
+.music_toggle.is-playing .music_notes span:nth-child(2) {
+  animation-delay: 0.9s;
+  color: var(--ink);
+}
+
 /* ==========================================================================
    Inner page heroes
    ========================================================================== */
@@ -1782,6 +1863,32 @@ html[lang="ja"] .stage_tag {
 
   to {
     transform: rotate(8deg) translateY(-6px);
+  }
+}
+
+@keyframes musicBob {
+  from {
+    transform: translateY(1px) rotate(-6deg);
+  }
+
+  to {
+    transform: translateY(-2px) rotate(6deg);
+  }
+}
+
+@keyframes noteRise {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, 0) rotate(0deg);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + 18px), -42px) rotate(20deg);
   }
 }
 
