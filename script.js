@@ -328,3 +328,113 @@ function displayContentWebj(item) {
   projectView.style.opacity = "0";
   projectView.style.animation = "fadeIn 0.5s forwards";
 }
+
+/* ------------------------------------------------------------------------
+   Dream Land effects
+   ------------------------------------------------------------------------ */
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+// Wrap every character of .bouncy headings in a span so they can hop
+function splitLetters(element) {
+  let index = 0;
+  function walk(node) {
+    [...node.childNodes].forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        const fragment = document.createDocumentFragment();
+        [...child.textContent].forEach((char) => {
+          if (char.trim() === "") {
+            fragment.appendChild(document.createTextNode(char));
+            return;
+          }
+          const span = document.createElement("span");
+          span.className = "letter";
+          span.style.setProperty("--i", index++);
+          span.textContent = char;
+          fragment.appendChild(span);
+        });
+        child.replaceWith(fragment);
+      } else if (child.nodeType === Node.ELEMENT_NODE) {
+        walk(child);
+      }
+    });
+  }
+  element.setAttribute("aria-label", element.textContent.trim());
+  walk(element);
+}
+
+document.querySelectorAll(".bouncy").forEach(splitLetters);
+
+// Reveal sections as they scroll into view
+document.querySelectorAll(".stagger").forEach((group) => {
+  [...group.children].forEach((child, i) => {
+    child.style.setProperty("--d", i * 80 + "ms");
+  });
+});
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      const target = entry.target;
+      target.classList.add("is-visible");
+      revealObserver.unobserve(target);
+      if (target.classList.contains("stagger")) {
+        // After the entrance finishes, let hover effects react instantly
+        const settleTime = target.children.length * 80 + 1600;
+        setTimeout(() => target.classList.add("settled"), settleTime);
+      }
+    });
+  },
+  { threshold: 0.12, rootMargin: "0px 0px -40px 0px" },
+);
+
+document.querySelectorAll(".reveal, .stagger").forEach((el) => revealObserver.observe(el));
+
+// Clicking the puffball makes it jump, spin and shower stars
+function burstStars(container) {
+  for (let i = 0; i < 10; i++) {
+    const star = document.createElement("span");
+    const angle = (Math.PI * 2 * i) / 10 + Math.random() * 0.4;
+    const distance = 110 + Math.random() * 70;
+    star.className = "burst_star";
+    star.style.setProperty("--dx", Math.cos(angle) * distance + "px");
+    star.style.setProperty("--dy", Math.sin(angle) * distance + "px");
+    star.style.setProperty("--r", Math.random() * 540 - 270 + "deg");
+    star.style.setProperty("--s", 16 + Math.random() * 16 + "px");
+    container.appendChild(star);
+    star.addEventListener("animationend", () => star.remove());
+  }
+}
+
+document.querySelectorAll(".hero_kirby").forEach((kirby) => {
+  kirby.querySelector(".kirby_btn").addEventListener("click", () => {
+    kirby.classList.remove("poyo");
+    void kirby.offsetWidth; // restart the animation
+    kirby.classList.add("poyo");
+    if (!reduceMotion) burstStars(kirby);
+  });
+});
+
+// Little star trail that follows the mouse
+if (!reduceMotion && window.matchMedia("(pointer: fine)").matches) {
+  const hues = [0, 0, 150, 290];
+  let lastSparkle = 0;
+  window.addEventListener(
+    "pointermove",
+    (event) => {
+      const now = performance.now();
+      if (now - lastSparkle < 50) return;
+      lastSparkle = now;
+      const sparkle = document.createElement("span");
+      sparkle.className = "sparkle";
+      sparkle.style.left = event.clientX + "px";
+      sparkle.style.top = event.clientY + "px";
+      sparkle.style.setProperty("--size", 8 + Math.random() * 10 + "px");
+      sparkle.style.setProperty("--hue", hues[Math.floor(Math.random() * hues.length)] + "deg");
+      document.body.appendChild(sparkle);
+      sparkle.addEventListener("animationend", () => sparkle.remove());
+    },
+    { passive: true },
+  );
+}
